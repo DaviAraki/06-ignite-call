@@ -6,8 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { api } from '@/lib/axios'
 import { AxiosError } from 'axios'
+import { api } from '../../lib/axios'
 
 const registerFormSchema = z.object({
   username: z
