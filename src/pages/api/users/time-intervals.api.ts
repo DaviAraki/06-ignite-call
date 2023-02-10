@@ -7,7 +7,7 @@ import { buildNextAuthOptions } from '../auth/[...nextauth].api'
 const timeIntervalsBodySchema = z.object({
   intervals: z.array(
     z.object({
-      weekDay: z.number(),
+      weekDay: z.number().min(0).max(6),
       startTimeInMinutes: z.number(),
       endTimeInMinutes: z.number(),
     })
@@ -47,5 +47,5 @@ export default async function handler(
     })
   )
 
-  return res.status(201).end()
+  return res.status(200).end()
 }
